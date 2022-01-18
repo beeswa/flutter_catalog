@@ -13,7 +13,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+        ),
         backgroundColor: MyTheme.creamColor,
         bottomNavigationBar: Container(
           color: Colors.white,
@@ -24,12 +26,12 @@ class HomeDetailPage extends StatelessWidget {
               '\$${catalog.price}'.text.xl4.red800.bold.make(),
               ElevatedButton(
                 onPressed: () {},
-                child: 'Buy'.text.xl.make(),
+                child: 'Add to Cart'.text.xl.make(),
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(MyTheme.darkbluish),
                     shape: MaterialStateProperty.all(StadiumBorder())),
-              ).pOnly(right: 8).wh(100, 50)
+              ).pOnly(right: 8).wh(140, 50)
             ],
           ).p32(),
         ),
@@ -57,11 +59,19 @@ class HomeDetailPage extends StatelessWidget {
                               .bold
                               .make(),
                           catalog.desc.text.color(Colors.grey).xl.make(),
+                          SingleChildScrollView(
+                            child:
+                                "Takimata duo erat amet no sed dolores, takimata sit magna at amet elitr kasd et ipsum, amet sadipscing labore lorem ipsum eirmod et stet. Eirmod aliquyam elitr dolore sit ut voluptua nonumy. Et voluptua diam nonumy at, gubergren sea eirmod ea et, duo dolores et accusam diam ea et lorem."
+                                    .text
+                                    .color(Colors.grey)
+                                    .make()
+                                    .p16(),
+                          )
                         ],
                       ).py64(),
                     ),
                   ),
-                ))
+                )),
               ],
             )));
   }
