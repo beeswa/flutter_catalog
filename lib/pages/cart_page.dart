@@ -6,13 +6,14 @@ class CartPage extends StatelessWidget {
   // final Item catalog;
 
   const CartPage({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: 'Cart'.text.make(),
+        title: 'Cart'.text.color(Theme.of(context).accentColor).make(),
       ),
     );
   }
